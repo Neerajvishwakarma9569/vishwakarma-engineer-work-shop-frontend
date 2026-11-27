@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import './Css/ProtectedRouter.css'
+import "./Css/ProtectedRouter.css";
 export default function ProtectedRoute({ children, worker = false }) {
   const { user, loading } = useAuth();
   if (loading) return <div className="container section">Loading...</div>;

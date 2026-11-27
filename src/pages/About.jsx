@@ -18,7 +18,7 @@ import {
 import api from "../services/api";
 import Loader from "../components/Loader";
 import { useLanguage } from "../context/LanguageContext";
-import "./css/about.css";
+import "./Css/About.css";
 
 export default function About() {
   const [teamData, setTeamData] = useState(null);

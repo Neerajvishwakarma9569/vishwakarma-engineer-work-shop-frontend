@@ -1,6 +1,6 @@
 import { Hammer, Ruler, ShieldCheck } from "lucide-react";
 import React from "react";
-import "./Css/projects.css";
+import "./Css/Projects.css";
 
 export default function Projects() {
   return (

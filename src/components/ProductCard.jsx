@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, ShoppingCart, ArrowUpRight, Star, Share2 } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import ShareModal from "./ShareModal";
-import './Css/ProductCard.css';
+import "./Css/ProductCard.css";
 
 export default function ProductCard({ product }) {
   const { add } = useCart();
