@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5001/api' });
+const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'https://vishwakarma-engineer-work-shop-backend.onrender.com/api' });
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('vew_token');
   if (token) config.headers.Authorization = `Bearer ${token}`;
