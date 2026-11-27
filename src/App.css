@@ -1,0 +1,10 @@
+.not-found-page {
+  display: grid;
+  min-height: 55vh;
+  align-content: center;
+  text-align: center;
+}
+
+.not-found-page h1 {
+  color: var(--ink);
+}

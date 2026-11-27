@@ -1,0 +1,389 @@
+/* ==========================================================================
+   ADVANCED PRODUCT SHARE MODAL STYLES
+   Vishwakarma Engineer Workshop - Social Media & Link Sharing
+   ========================================================================== */
+
+.share-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(12, 33, 66, 0.72);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: shareFadeIn 0.2s ease forwards;
+}
+
+@keyframes shareFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.share-modal-container {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 24px 50px rgba(12, 33, 66, 0.35);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: shareSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shareSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modal Header */
+.share-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: #0c2142;
+  color: #ffffff;
+  border-bottom: 2px solid #b45309;
+}
+
+.share-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.share-header-left h3 {
+  margin: 0;
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.share-header-icon {
+  color: #ffc629;
+}
+
+.share-close-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.share-close-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Modal Body */
+.share-modal-body {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Product Preview Snippet */
+.share-product-snippet {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.share-product-thumb {
+  width: 58px;
+  height: 58px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #dce5ef;
+  background: #ffffff;
+}
+
+.share-product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.share-product-category {
+  font-size: 10px;
+  font-weight: 800;
+  color: #b45309;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.share-product-info h4 {
+  margin: 2px 0 4px;
+  font-size: 14px;
+  font-weight: 750;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.share-product-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.share-product-price {
+  font-size: 14px;
+  font-weight: 850;
+  color: #0c2142;
+}
+
+.share-count-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+/* Copy Link Section */
+.share-copy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.share-section-title {
+  font-size: 12px;
+  font-weight: 750;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.share-copy-box {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.share-copy-box:focus-within {
+  border-color: #f59e0b;
+}
+
+.share-copy-input {
+  flex: 1;
+  min-width: 0;
+  height: 42px;
+  background: transparent;
+  border: none;
+  padding: 0 14px;
+  font-size: 12.5px;
+  color: #334155;
+  outline: none;
+}
+
+.share-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 42px;
+  padding: 0 18px;
+  background: #0c2142;
+  color: #ffffff;
+  border: none;
+  font-size: 12.5px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.share-copy-btn:hover {
+  background: #18365e;
+}
+
+.share-copy-btn.copied {
+  background: #16a34a;
+}
+
+.share-copied-notice {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  animation: shareFadeIn 0.2s ease;
+}
+
+/* Social Media Grid */
+.share-social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.share-social-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px 8px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-decoration: none;
+}
+
+.share-social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.social-btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 18px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #334155;
+  text-align: center;
+}
+
+/* Specific Social Brand Colors */
+.share-social-btn.whatsapp:hover {
+  border-color: #25d366;
+  background: #f0fdf4;
+}
+.share-social-btn.whatsapp .social-btn-icon {
+  background: #25d366;
+}
+
+.share-social-btn.facebook:hover {
+  border-color: #1877f2;
+  background: #eff6ff;
+}
+.share-social-btn.facebook .social-btn-icon {
+  background: #1877f2;
+}
+
+.share-social-btn.twitter:hover {
+  border-color: #000000;
+  background: #f8fafc;
+}
+.share-social-btn.twitter .social-btn-icon {
+  background: #0f172a;
+}
+
+.share-social-btn.telegram:hover {
+  border-color: #0088cc;
+  background: #f0f9ff;
+}
+.share-social-btn.telegram .social-btn-icon {
+  background: #0088cc;
+}
+
+.share-social-btn.linkedin:hover {
+  border-color: #0a66c2;
+  background: #eff6ff;
+}
+.share-social-btn.linkedin .social-btn-icon {
+  background: #0a66c2;
+}
+
+.share-social-btn.email:hover {
+  border-color: #ea4335;
+  background: #fef2f2;
+}
+.share-social-btn.email .social-btn-icon {
+  background: #ea4335;
+}
+
+.share-social-btn.native:hover {
+  border-color: #d97706;
+  background: #fffbeb;
+}
+.share-social-btn.native .social-btn-icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* Modal Footer Message */
+.share-modal-footer {
+  padding: 12px 24px 16px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.share-footer-brand {
+  font-weight: 700;
+  color: #0c2142;
+}
+
+/* Responsive adjustments */
+@media (max-width: 520px) {
+  .share-modal-container {
+    max-width: 95vw;
+  }
+  .share-modal-header {
+    padding: 14px 18px;
+  }
+  .share-modal-body {
+    padding: 16px 18px 20px;
+    gap: 16px;
+  }
+  .share-social-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .social-btn-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 360px) {
+  .share-social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

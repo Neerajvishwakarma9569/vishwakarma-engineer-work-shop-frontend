@@ -1,0 +1,320 @@
+/* ==========================================================================
+   Vishwakarma Engineer Workshop - Modern Responsive Footer
+   ========================================================================== */
+
+.footer {
+  padding: 54px 0 22px;
+  border-top: 3px solid var(--gold-light, #ffc629);
+  background:
+    radial-gradient(ellipse at 85% 0%, rgba(28, 62, 103, 0.7) 0%, transparent 45%),
+    radial-gradient(ellipse at 15% 100%, rgba(20, 48, 82, 0.5) 0%, transparent 40%),
+    #07182f;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 4-Column Grid: Brand | Quick Links | Policies & Legal | Get In Touch */
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.35fr 0.8fr 1.05fr 1.25fr !important;
+  gap: 36px;
+  padding-bottom: 42px;
+  align-items: start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Brand Column */
+.footer-brand {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.footer-brand img {
+  width: min(230px, 100%);
+  max-height: 85px;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+}
+
+.footer-brand-desc {
+  max-width: 320px;
+  margin: 12px 0 20px;
+  color: #cbd5e1;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Social links in brand column */
+.footer-social-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-social-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gold-light, #ffc629);
+}
+
+.footer-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-social-links a {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.footer-social-links a svg {
+  color: currentColor;
+}
+
+.footer-social-links a:hover {
+  transform: translateY(-3px);
+  background: var(--gold-light, #ffc629);
+  border-color: var(--gold-light, #ffc629);
+  color: #07182f;
+  box-shadow: 0 6px 16px rgba(255, 198, 41, 0.35);
+}
+
+/* Column Headings */
+.footer-col h4 {
+  margin: 0 0 18px;
+  color: var(--gold-light, #ffc629);
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--gold-light, #ffc629);
+  border-radius: 2px;
+}
+
+/* Nav Links in Columns 2 & 3 */
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #cbd5e1;
+  font-size: 13px;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 0.18s ease;
+}
+
+.footer-nav-list a svg {
+  color: var(--gold-light, #ffc629);
+  opacity: 0.75;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.footer-nav-list a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.footer-nav-list a:hover svg {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* Column 4: Get in Touch */
+.footer-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #cbd5e1;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.contact-icon {
+  color: var(--gold-light, #ffc629);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.contact-item strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.contact-item a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.contact-item a:hover {
+  color: var(--gold-light, #ffc629);
+  text-decoration: underline;
+}
+
+/* WhatsApp Quick Connect Button */
+.footer-wa-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  background: rgba(37, 211, 102, 0.14);
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  color: #25d366;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 0.2s ease;
+}
+
+.footer-wa-action:hover {
+  background: #25d366;
+  color: #07182f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+}
+
+/* Bottom Bar */
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.footer-copyright {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.copyright-bullet {
+  color: var(--gold-light, #ffc629);
+}
+
+.footer-sub-note {
+  color: #cbd5e1;
+}
+
+.footer-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #e2e8f0;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.footer-trust-badge svg {
+  color: var(--gold-light, #ffc629);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Laptop / Medium Screens (1024px to 1199px) */
+@media (max-width: 1140px) {
+  .footer-grid {
+    grid-template-columns: 1.25fr 0.8fr 1fr 1.15fr !important;
+    gap: 26px;
+  }
+}
+
+/* Tablets & Small Laptops (768px to 1023px) */
+@media (max-width: 980px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 36px 30px;
+  }
+
+  .footer-brand-desc {
+    max-width: 100%;
+  }
+}
+
+/* Mobile Screens (< 640px) */
+@media (max-width: 640px) {
+  .footer {
+    padding-top: 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 32px;
+    padding-bottom: 28px;
+  }
+
+  .footer-brand img {
+    width: 200px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-copyright {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .copyright-bullet {
+    display: none;
+  }
+}

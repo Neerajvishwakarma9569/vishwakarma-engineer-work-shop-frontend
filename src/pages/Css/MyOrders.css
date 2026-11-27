@@ -1,0 +1,509 @@
+/* ==========================================================================
+   My Orders & Return/Refund Management Styles
+   ========================================================================== */
+
+.my-orders-tabs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 12px;
+}
+
+.order-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.order-tab-btn:hover {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.order-tab-btn.active {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.order-tab-badge {
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 33, 66, 0.75);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: 14px;
+  width: min(640px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--line);
+  animation: modalSlideIn 0.2s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.modal-close-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--ink);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+/* Form Styles inside Modals */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--ink);
+  background: #fff;
+  transition: border-color 0.18s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(229, 169, 0, 0.15);
+}
+
+.form-help-text {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* Upload Proof Area */
+.proof-upload-box {
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background: var(--surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.proof-upload-box:hover {
+  border-color: var(--gold);
+  background: #fdfaf0;
+}
+
+.proof-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.proof-preview-item {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.proof-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proof-preview-remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* Warning / Alert Callout */
+.policy-callout-box {
+  background: #fff8e6;
+  border-left: 4px solid var(--gold);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #5c4200;
+  line-height: 1.6;
+}
+
+/* Buttons in Orders */
+.btn-return {
+  background: #fff;
+  border: 1px solid #18365e;
+  color: #18365e;
+}
+
+.btn-return:hover {
+  background: #18365e;
+  color: #fff;
+}
+
+/* Return & Refund History Cards */
+.history-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.history-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(12, 33, 66, 0.05);
+}
+
+.history-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.history-req-id {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-date {
+  font-size: 12px;
+  color: var(--muted);
+  display: block;
+  margin-top: 4px;
+}
+
+.history-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge-approved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge-rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-badge-completed {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.status-badge-cancelled {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+.history-item-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.history-item-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.history-item-details b {
+  display: block;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.history-item-details span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Timeline UI */
+.history-timeline {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.history-timeline h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.timeline-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  position: relative;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.timeline-step-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border: 2px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  z-index: 1;
+}
+
+.timeline-step.completed .timeline-step-icon {
+  background: #2e7d32;
+  border-color: #2e7d32;
+  color: #fff;
+}
+
+.timeline-step.active .timeline-step-icon {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.timeline-step.rejected .timeline-step-icon {
+  background: #d32f2f;
+  border-color: #d32f2f;
+  color: #fff;
+}
+
+.timeline-step-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.timeline-step-date {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.history-remarks-box {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.history-remarks-box strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.refund-ref-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eef4ff;
+  border: 1px solid #c7d8fe;
+  color: #1e40af;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .my-orders-tabs {
+    flex-wrap: wrap;
+  }
+  .timeline-steps {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 16px;
+  }
+  .timeline-step {
+    flex-direction: row;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .timeline-step-icon {
+    margin-bottom: 0;
+  }
+}
+
+/* Pay Online Now Button */
+.btn-pay-now {
+  background: linear-gradient(135deg, #e5a900, #f59e0b) !important;
+  color: #07182f !important;
+  font-weight: 800 !important;
+  border: 1px solid #d97706 !important;
+  box-shadow: 0 4px 14px rgba(229, 169, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pay-now:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 169, 0, 0.45);
+  background: #ffc629 !important;
+}
+
+.btn-pay-now:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.payment-badge-paid {
+  background: #d4edda !important;
+  color: #155724 !important;
+  border: 1px solid #c3e6cb !important;
+}
+
+.payment-badge-pending {
+  background: #fff3cd !important;
+  color: #856404 !important;
+  border: 1px solid #ffeeba !important;
+}
