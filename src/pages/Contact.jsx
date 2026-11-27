@@ -9,7 +9,7 @@ import {
   Wrench,
 } from "lucide-react";
 import api from "../services/api";
-import "./css/contact.css";
+import "../pages/Css/contact.css";
 
 export default function Contact() {
   const [form, setForm] = useState({
