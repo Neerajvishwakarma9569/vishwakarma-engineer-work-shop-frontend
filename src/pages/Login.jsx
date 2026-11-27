@@ -24,7 +24,12 @@ export default function Login() {
       const u = await login(form);
       if (u?.require2FA) {
         setStep('2fa');
-        setNotice(u.message || '6-digit OTP code sent to your email.');
+        if (u.devOtp) {
+          setOtp(u.devOtp);
+          setNotice(`Verification Code: ${u.devOtp} (Cloud email delivery delayed)`);
+        } else {
+          setNotice(u.message || '6-digit OTP code sent to your email.');
+        }
       } else {
         navigate(u.role === 'worker' ? '/worker-dashboard' : '/');
       }
@@ -52,8 +57,13 @@ export default function Login() {
 
   const handleResend = async () => {
     try {
-      await resend2FA(form.email);
-      setNotice('A new OTP has been sent to your email.');
+      const res = await resend2FA(form.email);
+      if (res?.devOtp) {
+        setOtp(res.devOtp);
+        setNotice(`Fresh Verification Code: ${res.devOtp}`);
+      } else {
+        setNotice('A new OTP has been sent to your email.');
+      }
     } catch {
       setError('Could not resend OTP.');
     }
