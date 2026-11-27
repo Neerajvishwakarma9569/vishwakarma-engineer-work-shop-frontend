@@ -5,7 +5,7 @@ import api from "../services/api";
 import ProductCard from "../components/ProductCard";
 import Loader from "../components/Loader";
 import { useLanguage } from "../context/LanguageContext";
-import "./css/products.css";
+import "./Css/products.css";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
