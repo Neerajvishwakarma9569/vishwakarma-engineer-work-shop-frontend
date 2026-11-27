@@ -12,6 +12,7 @@ export default function Home() {
   const [loadingProducts, setLoadingProducts] = useState(true);
   const { t, lang } = useLanguage();
 
+  
   useEffect(() => {
     api
       .get("/products?featured=true")
