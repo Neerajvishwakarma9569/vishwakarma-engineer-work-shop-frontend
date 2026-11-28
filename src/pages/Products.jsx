@@ -36,7 +36,7 @@ export default function Products() {
         },
         signal: controller.signal,
       })
-      .then(({ data }) => setProducts(Array.isArray(data) ? data : []))
+      .then(({ data }) => setProducts(Array.isArray(data) ? data : (data?.products || [])))
       .catch((err) => {
         if (err.name !== "CanceledError" && err.name !== "AbortError") {
           setProducts([]);

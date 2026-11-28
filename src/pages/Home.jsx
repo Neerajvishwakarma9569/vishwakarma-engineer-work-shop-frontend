@@ -16,7 +16,10 @@ export default function Home() {
   useEffect(() => {
     api
       .get("/products?featured=true")
-      .then(({ data }) => setProducts(data.slice(0, 3)))
+      .then(({ data }) => {
+        const list = Array.isArray(data) ? data : (data?.products || []);
+        setProducts(list.slice(0, 3));
+      })
       .catch(() => setProducts([]))
       .finally(() => setLoadingProducts(false));
   }, []);

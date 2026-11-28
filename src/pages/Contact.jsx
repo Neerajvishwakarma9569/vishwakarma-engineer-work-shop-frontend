@@ -58,7 +58,7 @@ export default function Contact() {
               <Wrench size={58} strokeWidth={1.2} />
               <span>CRAFTED FOR YOUR SPACE</span>
             </div>
-            <img src="../Images/content.png" alt="images" />
+            <img src="/Images/content.png" alt="images" />
           </div>
         </div>
       </section>
