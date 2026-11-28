@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css'
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -41,8 +41,10 @@ export default function App() {
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/product/:id" element={<Navigate to="/products/:id" replace />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about-us" element={<Navigate to="/about" replace />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
         <Route path="/cart" element={<Cart />} />
         <Route
           path="/my-orders"
@@ -52,6 +54,7 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/orders" element={<Navigate to="/my-orders" replace />} />
         <Route
           path="/track-order/:id"
           element={
